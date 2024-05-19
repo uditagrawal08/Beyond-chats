@@ -42,5 +42,4 @@ This Flask application fetches data from an API endpoint and displays it on a we
 - Requests: HTTP library for making requests to web servers.
 - Jinja2: Templating engine used for rendering HTML templates.
 
-## File Structure
 
