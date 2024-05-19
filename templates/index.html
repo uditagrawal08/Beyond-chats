@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Data</title>
+</head>
+<body>
+    <h1>Processed Data</h1>
+    {% if results %}
+        <ul>
+            {% for result in results %}
+                <li>
+                    <strong>Response:</strong> {{ result.response }}<br>
+                    <strong>Source:</strong> {{ result.source }}<br>
+                    <strong>Citations:</strong>
+                    <ul>
+                        {% for citation in result.citations %}
+                            <li>
+                                <strong>ID:</strong> {{ citation.id }}<br>
+                                <strong>Link:</strong> <a href="{{ citation.link }}">{{ citation.link }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+    <button onclick="loadNextPage()">Next Page</button>
+
+    <script>
+        function loadNextPage() {
+            fetch('/next')
+                .then(response => response.json())
+                .then(data => {
+                    window.location.href = data.url;
+                });
+        }
+    </script>
+</body>
+</html>
