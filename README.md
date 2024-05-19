@@ -17,7 +17,7 @@ This Flask application fetches data from an API endpoint and displays it on a we
     ```
 
 3. Install the required dependencies:
-
+    
     ```bash
     pip install -r requirements.txt
     ```
@@ -29,6 +29,10 @@ This Flask application fetches data from an API endpoint and displays it on a we
     ```
 
 5. Access the application in your web browser at `http://localhost:5000`.
+
+## Requirements
+
+- Python 3.x
 
 ## Usage
 
